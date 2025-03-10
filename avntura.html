@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script>
+function fase1() {
+    var html = '<div class="container">';
+    html += '<p> Você recebe uma carta misteriosa de um amigo perdido. Ele pede ajuda na Floresta Sombria. Você decide ir ou ficar? </p>';
+    html += '<img src="comidas quentes.png">';
+  
+    html += '<button onclick="fase2()">Aceitar a missão e ir até a floresta.</button>';
+    html += '<button onclick="fase3()">Ignorar a carta e continuar sua rotina na vila.</button>';
+    
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase2() {
+    var html = '<div class="container">';
+    html += '<p> Você entra na floresta e logo encontra uma bifurcação. O que fazer? </p>';
+    html += '<img src="ia2.png">';
+
+    html += '<button onclick="fase4()">Ir pelo caminho iluminado, mas com um som estranho vindo de lá.</button>';
+    html += '<button onclick="fase5()">Ir pelo caminho escuro e silencioso, desconfiado da presença.</button>';
+
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase3() {
+    var html = '<div class="container">';
+    html += '<p> Você decide continuar na vila, mas sente que algo está errado. De repente, a vila começa a ficar deserta. </p>';
+    html += '<img src="ia11.png">';
+
+    html += '<button onclick="fase6()">Investigar a vila vazia.</button>';
+    html += '<button onclick="fase7()">Voltar para sua casa e trancar as portas.</button>';
+
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase4() {
+    var html = '<div class="container">';
+    html += '<p> O som estranho fica mais forte, mas você segue em frente. Você encontra uma velha cabana. O que fazer? </p>';
+    html += '<img src="ia6.png">';
+
+    html += '<button onclick="fase8()">Entrar na cabana.</button>';
+    html += '<button onclick="fase9()">Voltar e seguir pelo caminho escuro.</button>';
+
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase5() {
+    var html = '<div class="container">';
+    html += '<p> O caminho escuro leva a um grande lago. Algo parece estar se movendo na água. O que você faz? </p>';
+    html += '<img src="lago.png">';
+
+    html += '<button onclick="fase10()">Nadar até a outra margem.</button>';
+    html += '<button onclick="fase4()">Voltar para o caminho iluminado.</button>';
+
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase6() {
+    var html = '<div class="container">';
+    html += '<p> Você investiga a vila vazia e encontra uma antiga taverna. Algo brilha no chão. O que fazer? </p>';
+    html += '<img src="ia10.png">';
+
+    html += '<button onclick="fase4()">Entrar na taverna e investigar.</button>';
+    html += '<button onclick="fase3()">Voltar para a sua casa.</button>';
+
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase7() {
+    var html = '<div class="container">';
+    html += '<p> Ao trancar as portas, você ouve um som na janela. Algo está do lado de fora, observando. O que fazer? </p>';
+    html += '<img src="ia12.png">';
+
+    html += '<button onclick="fase8()">Olhar pela janela.</button>';
+    html += '<button onclick="fase10()">Sair pela porta dos fundos.</button>';
+
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase8() {
+    var html = '<div class="container">';
+    html += '<p> Você olha pela janela e vê um ser estranho olhando de volta. O que fazer? </p>';
+    html += '<img src="ia7.png">';
+    
+    html += '<button onclick="fase9()">Abrir a porta e encarar o ser estranho.</button>';
+    html += '<button onclick="fase6()">Fugir pela porta dos fundos.</button>';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase9() {
+    var html = '<div class="container">';
+    html += '<p> Você abre a porta, mas o ser não é o que você esperava. Ele se aproxima de você rapidamente. O que fazer? </p>';
+    html += '<img src="ia8.png">';
+    
+    html += '<button onclick="fase10()">Lutar contra o ser.</button>';
+    html += '<button onclick="fase4()">Correr para a floresta novamente.</button>';
+
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase10() {
+    var html = '<div class="container">';
+    html += '<p> A luta foi intensa, mas você consegue escapar. No fim, você encontra a verdade sobre a floresta sombria. FIM.</p>';
+    html += '<img src="ia9.png">';
+    html += '</div>';
+    $("body").append(html);
+}
+</script>
+
+<style>
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("rain-10807.gif");
+    background-size: 190px; 
+    background-position: center;
+    height: 100vh; 
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
+}
+
+button {
+    background-color: #737573;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    width: 400px;
+    margin: 10px 0; 
+}
+
+
+p {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+
+img {
+    margin-bottom: 20px;
+}
+</style>
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Aventura na Floresta Sombria</h1>
+    <h1>Você recebe uma carta misteriosa de um amigo perdido. Ele pede ajuda na Floresta Sombria. O que você fará?</h1>
+    <img src="ia.png">
+    
+    <div class="button">
+        <br>
+        <button onclick="fase1()">Aceitar a missão e ir até a floresta.</button>
+        <button onclick="fase3()">Ignorar a carta e continuar sua rotina na vila.</button>
+    </div>
+</div>
+
+</body>
+</html>
